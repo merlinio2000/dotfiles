@@ -1,0 +1,156 @@
+"" Source your .vimrc
+"source ~/.vimrc
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+set ignorecase smartcase
+
+" Find more examples here: https://jb.gg/share-ideavimrc
+set relativenumber
+set number
+
+" https://superuser.com/questions/622898/how-to-turn-off-the-bell-sound-in-intellij
+" https://stackoverflow.com/questions/63386803/how-to-turn-off-a-bell-in-intellij-idea
+set visualbell
+
+" https://github.com/JetBrains/ideavim/blob/master/doc/emulated-plugins.md
+"set surround
+
+" https://youtrack.jetbrains.com/issue/VIM-1970
+"set highlightedyank
+
+" https://youtrack.jetbrains.com/issue/VIM-959
+set ideamarks
+
+" https://github.com/JetBrains/ideavim/wiki/%60ideajoin%60-examples
+set ideajoin
+
+
+"set NERDTree
+
+" https://youtrack.jetbrains.com/issue/VIM-1521
+"set commentary
+
+" dia daa cia caa
+"set argtextobj
+
+" die dae cie cae
+"set textobj-entire
+
+" https://youtrack.jetbrains.com/issue/VIM-1042
+set NERDTree
+
+" https://github.com/JetBrains/ideavim/wiki/Emulated-plugins#vim-paragraph-motion
+"set vim-paragraph-motion
+
+" https://github.com/JetBrains/ideavim/wiki/Emulated-plugins#vim-indent-object
+"set textobj-indent
+
+"set exchange
+
+let mapleader = " "
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+
+map <C-c> <Esc>
+
+
+nnoremap Y y$
+nnoremap n nzz
+nnoremap N Nzz
+" Greatest remap EVER!!
+" Let me explain, this remap while in visual mode
+" will delete what is currently highlighted and replace it
+" with what is in the register BUT it will YANK (delete) it
+" to a VOID register. Meaning I still have what I originally had
+" when I pasted. I don't loose the previous thing I YANKED!
+vnoremap <leader>p "_dP
+
+
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+
+nnoremap <c-w>v :action SplitVertically<CR>
+nnoremap <c-w>s :action SplitHorizontally<CR>
+nnoremap <c-w>o :action Unsplit<CR>
+nnoremap <c-w>m :action MoveEditorToOppositeTabGroup<CR>
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap H :action PreviousTab<CR>
+nnoremap L :action NextTab<CR>
+nnoremap <leader>en :action EditSourceInNewWindow<CR>
+"" nnoremap <leader>n :action NextWindow<CR>
+nnoremap <leader>q :action CloseContent<CR>
+nnoremap <leader>qa :action CloseAllEditors<CR>
+
+
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+nnoremap cc :action CommentByLineComment<CR>
+vnoremap cc :action CommentByLineComment<CR>
+nnoremap cb :action CommentByBlockComment<CR>
+vnoremap cb :action CommentByBlockComment<CR>
+nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
+nnoremap ==  :action ReformatCode<CR>
+vnoremap ==  :action ReformatCode<CR>
+nnoremap <c-r> :action RecentFiles<CR>
+nnoremap <leader>l :action RecentLocations<CR>
+nnoremap <leader>h  :action LocalHistory.ShowHistory<CR>
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+
+nnoremap <leader>ff :action GotoFile<CR>
+nnoremap <leader>fe :action SearchEverywhere<CR>
+nnoremap <leader>ft :action FindInPath<CR>
+nnoremap <leader>fs :action GotoSymbol<CR>
+nnoremap <leader>fc :action GotoClass<CR>
+"nnoremap <leader>u :action FindUsages<CR>
+"nnoremap <leader>s :action GotoRelated<CR>
+"nnoremap <leader>h :action CallHierarchy<CR>
+"nnoremap <leader>b :action ShowNavBar<CR>
+nnoremap ,s :action FileStructurePopup<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotToDeclaration<CR>
+nnoremap gp :action GotToSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+nnoremap gr :action FindUsages<CR>
+
+nnoremap sq :action QuickFixes<CR>
+
+nnoremap <leader>fR :action FindUsages<CR>
+nnoremap <leader>fr :action HighlightUsagesInFile<CR>
+" Alt + Insert in idea.
+nnoremap <leader>g :action Generate<CR>
+nnoremap <leader>R :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>a :action AnalyzeActionsPopup<CR>
+
+
+nnoremap <leader>tt :NERDTreeToggle<CR>
+nnoremap <leader>tc :action SelectInProjectView<CR>
+
+nnoremap g; :action JumpToLastChange<CR>
+nnoremap g, :action JumpToNextChange<CR>
+
+" Can also use Ctrl-Shift-[
+nnoremap [[ :action EditorCodeBlockStart<CR>
+vnoremap [[ :action EditorCodeBlockStart<CR>
+" Can also use Ctrl-Shift-]
+nnoremap ]] :action EditorCodeBlockEnd<CR>
+vnoremap ]] :action EditorCodeBlockEnd<CR>
+
+
+set ideastrictmode

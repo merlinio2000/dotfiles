@@ -1,5 +1,15 @@
 "" Source your .vimrc
 "source ~/.vimrc
+set ideastrictmode
+
+
+Plug 'machakann/vim-highlightedyank'
+let g:highlightedyank_highlight_duration = "5"
+let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
+
+Plug 'preservim/nerdtree'
+
+set sneak
 
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
@@ -140,6 +150,8 @@ nnoremap <leader>a :action AnalyzeActionsPopup<CR>
 
 
 nnoremap <leader>tt :NERDTreeToggle<CR>
+nnoremap <leader>tf :NERDTreeFind<CR>
+nnoremap <leader>tc :NERDTreeFocus<CR>
 nnoremap <leader>tc :action SelectInProjectView<CR>
 
 nnoremap g; :action JumpToLastChange<CR>
@@ -153,4 +165,3 @@ nnoremap ]] :action EditorCodeBlockEnd<CR>
 vnoremap ]] :action EditorCodeBlockEnd<CR>
 
 
-set ideastrictmode

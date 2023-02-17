@@ -58,8 +58,6 @@ autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-# Custom ZSH Binds
-bindkey '^ ' autosuggest-accept
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/dotfiles/aliasrc" ] && source "$HOME/dotfiles/aliasrc"
@@ -91,6 +89,10 @@ plug "zap-zsh/exa"
 plug "zsh-users/zsh-syntax-highlighting"
 eval "$(zoxide init zsh)"
 source ~/dotfiles/powerlevel10k/powerlevel10k.zsh-theme
+
+# Custom ZSH Binds
+bindkey '^ ' autosuggest-accept
+bindkey '©' fzf-cd-widget # MacOS fzf-cd-widget fix (Alt-C is the copyright character)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

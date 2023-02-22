@@ -4,6 +4,11 @@ lvenv() {
     venv_regex='\./\.?\(venv\|env\)'
     venv_folder=$(find './' -maxdepth 1 -type d -regex "$venv_regex" | head -n 1)
 
+    if [ -z "$venv_folder" ]; then 
+        echo "couldnt find a virtual environment in this folder"
+        return 1
+    fi
+
 	venv_activation_script="${venv_folder}/bin/activate"
 
     if [ ! -f "$venv_activation_script" ]; then

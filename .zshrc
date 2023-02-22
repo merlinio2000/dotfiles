@@ -62,8 +62,9 @@ zle -N down-line-or-beginning-search
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/dotfiles/aliasrc" ] && source "$HOME/dotfiles/aliasrc"
 
-# Load custom utility scripts
-[ -f "$HOME/dotfiles/scripts.sh" ] && source "$HOME/dotfiles/scripts.sh"
+# Autoload custom utility scripts
+fpath=(~/dotfiles/sh_funcs $fpath)
+autoload -Uz lvenv
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

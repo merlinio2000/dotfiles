@@ -126,7 +126,7 @@ window:
   # # If `true`, bold text is drawn using the bright color variants.
   # draw_bold_text_with_bright_colors: true
 
-  option_as_alt: OnlyLeft # For MacOS
+  option_as_alt: None # For MacOS, use key_bindings instead
 
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }
@@ -134,3 +134,5 @@ key_bindings:
   - { key: Key0, mods: Control, action: ResetFontSize }
   - { key: Equals, mods: Control, action: IncreaseFontSize }
   - { key: Minus, mods: Control, action: DecreaseFontSize }
+  - { key: C, mods: Alt, chars: "\x1bc" } # for MacOS
+  - { key: Q, mods: Alt, chars: "\x1bq" } # for MacOS

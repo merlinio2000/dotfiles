@@ -61,10 +61,6 @@ cursor:
   style:
     blinking: Never
 
-# Send ESC (\x1b) before characters when alt is pressed.
-alt_send_esc: false
-
-
 selection:
     semantic_escape_chars: ',│`|:"'' ()[]{}<>'
     save_to_clipboard: true
@@ -130,7 +126,7 @@ window:
   # # If `true`, bold text is drawn using the bright color variants.
   # draw_bold_text_with_bright_colors: true
 
-  option_as_alt: true # For MacOS
+  option_as_alt: OnlyLeft # For MacOS
 
 key_bindings:
   - { key: V, mods: Control|Shift, action: Paste }

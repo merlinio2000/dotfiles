@@ -3,6 +3,7 @@
 alias j='z'
 alias f='zi'
 alias g='lazygit'
+alias v='nvim'
 alias nvimrc='nvim ~/.config/nvim/'
 alias ...="cd ../.."
 alias ....="cd ../../.."

@@ -16,12 +16,7 @@ lvenv() {
         return 1
     fi
 
-	if [ -x "$venv_activation_script" ]; then
-        . "$venv_activation_script"
-    else
-        echo "file $venv_activation_script is not executable" 
-        return 1
-    fi
+    . "$venv_activation_script"
 
-    return 0;
+    return 0
 }

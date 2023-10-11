@@ -6,6 +6,8 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
+# true color support
+set -sa terminal-features ',alacritty:RGB'
 
 # -- windows & pane creation ---------------------------------------------------
 

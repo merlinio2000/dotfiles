@@ -66,9 +66,6 @@ zle -N down-line-or-beginning-search
 fpath=(~/dotfiles/sh_funcs $fpath)
 autoload -Uz lvenv
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 
 # completions
 autoload -Uz compinit

@@ -66,8 +66,10 @@ zle -N down-line-or-beginning-search
 fpath=(~/dotfiles/sh_funcs $fpath)
 autoload -Uz lvenv
 
-
 # completions
+if type brew &>/dev/null; then # homebrew has 
+    fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+fi
 autoload -Uz compinit
 zstyle ':completion:*' menu yes select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'

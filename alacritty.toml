@@ -1,0 +1,113 @@
+[[colors.indexed_colors]]
+color = "0xff9e64"
+index = 16
+
+[[colors.indexed_colors]]
+color = "0xdb4b4b"
+index = 17
+
+[colors.bright]
+black = "0x414868"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xc0caf5"
+yellow = "0xe0af68"
+
+[colors.normal]
+black = "0x15161e"
+blue = "0x7aa2f7"
+cyan = "0x7dcfff"
+green = "0x9ece6a"
+magenta = "0xbb9af7"
+red = "0xf7768e"
+white = "0xa9b1d6"
+yellow = "0xe0af68"
+
+[colors.primary]
+background = "0x1a1b26"
+foreground = "0xc0caf5"
+
+[cursor.style]
+blinking = "Never"
+
+[font]
+size = 13.0
+
+[font.bold]
+family = "Hack Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack Nerd Font"
+style = "Bold Italic"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 1
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001Bc"
+key = "C"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bq"
+key = "Q"
+mods = "Alt"
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+opacity = 1
+decorations = "none"
+dynamic_title = true
+option_as_alt = "None"
+
+[window.padding]
+x = 2
+y = 2
+
+[scrolling]
+history = 100000

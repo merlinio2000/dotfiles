@@ -37,28 +37,20 @@ blinking = "Never"
 size = 13.0
 
 [font.bold]
-family = "Hack Nerd Font"
+family = "JetBrainsMono NF"
 style = "Bold"
 
 [font.bold_italic]
-family = "Hack Nerd Font"
+family = "JetBrainsMono NF"
 style = "Bold Italic"
 
-[font.glyph_offset]
-x = 0
-y = 0
-
 [font.italic]
-family = "Hack Nerd Font"
+family = "JetBrainsMono NF"
 style = "Italic"
 
 [font.normal]
-family = "Hack Nerd Font"
+family = "JetBrainsMono NF"
 style = "Regular"
-
-[font.offset]
-x = 0
-y = 1
 
 [[keyboard.bindings]]
 action = "Paste"
@@ -103,7 +95,6 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 opacity = 1
 decorations = "none"
 dynamic_title = true
-option_as_alt = "None"
 
 [window.padding]
 x = 2

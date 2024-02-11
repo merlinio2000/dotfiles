@@ -1,0 +1,57 @@
+#!/bin/zsh
+# based on insights from https://github.com/romkatv/zsh-bench
+
+DOTDIR=$(dirname "${(%):-%N}")
+
+# If not in tmux, start tmux.
+if [[ -z ${TMUX+X}${ZSH_SCRIPT+X}${ZSH_EXECUTION_STRING+X} ]]; then
+  exec tmux
+fi
+
+# Clone and compile to wordcode missing plugins.
+if [[ ! -e ~/zsh-syntax-highlighting ]]; then
+  git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/zsh-syntax-highlighting
+fi
+if [[ ! -e ~/zsh-autosuggestions ]]; then
+  git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions.git ~/zsh-autosuggestions
+fi
+if [[ ! -e ~/zsh-completions ]]; then
+  git clone --depth=1 https://github.com/zsh-users/zsh-completions.git ~/zsh-completions
+fi
+fpath=(~/zsh-completions/src $fpath)
+
+if [[ ! -e ~/powerlevel10k ]]; then
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+  make -C ~/powerlevel10k pkg
+fi
+
+# Activate Powerlevel10k Instant Prompt.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+source ${DOTDIR}/opts.zsh
+source ${DOTDIR}/completion.zsh
+source ${DOTDIR}/vim.zsh
+source ${DOTDIR}/fzf.zsh
+
+# Load aliases and shortcuts if existent.
+source "$HOME/dotfiles/aliasrc"
+
+# Autoload custom utility scripts
+fpath=(~/dotfiles/sh_funcs $fpath)
+autoload -Uz lvenv
+
+# In case performance issues arrise
+# ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+
+# Load plugins.
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+eval "$(zoxide init zsh)"
+source ~/.p10k.zsh
+
+
+bindkey '^ ' autosuggest-accept
+bindkey '©' fzf-cd-widget # MacOS fzf-cd-widget fix (Alt-C is the copyright character)

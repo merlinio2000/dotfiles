@@ -3,11 +3,6 @@
 
 DOTDIR=$(dirname "${(%):-%N}")
 
-# If not in tmux, start tmux.
-if [[ -z ${TMUX+X}${ZSH_SCRIPT+X}${ZSH_EXECUTION_STRING+X} ]]; then
-  exec tmux
-fi
-
 # Clone and compile to wordcode missing plugins.
 if [[ ! -e ~/zsh-syntax-highlighting ]]; then
   git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/zsh-syntax-highlighting

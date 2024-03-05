@@ -6,8 +6,8 @@ export KEYTIMEOUT=1
 if [[ -o menucomplete ]]; then 
     # Use hjlk in menu selection (during completion)
     bindkey -M menuselect '^h' vi-backward-char
-    bindkey -M menuselect '^k' vi-up-line-or-history
-    bindkey -M menuselect '^j' vi-down-line-or-history
+    bindkey -M menuselect '^p' vi-up-line-or-history
+    bindkey -M menuselect '^n' vi-down-line-or-history
     bindkey -M menuselect '^l' vi-forward-char
 
     bindkey -M menuselect '^f' history-incremental-search-forward

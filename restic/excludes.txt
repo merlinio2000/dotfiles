@@ -1,0 +1,9 @@
+# rust build artifacts
+**/target/debug/
+**/target/release/
+
+
+# yall already know what it is
+**/node_modules/
+**/dist/
+**/.dist/

@@ -2,9 +2,8 @@
 
 set -eu
 
-# shellcheck source=./restic-env.sh
-. "$HOME/dotfiles/restic/restic-env.sh"
+. ./restic-env.sh
 
-restic forget --prune \
+restic forget --prune --verbose \
     --keep-hourly 48 --keep-daily 7 --keep-weekly 4 \
     --keep-monthly 12 --keep-yearly 10

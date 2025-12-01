@@ -2,7 +2,6 @@
 
 set -eu
 
-# shellcheck source=./restic-env.sh
-. "$HOME/dotfiles/restic/restic-env.sh"
+. ./restic-env.sh
 
-restic --exclude-file "$HOME/dotfiles/restic/excludes.txt" backup "$HOME/Documents"
+restic --exclude-file excludes.txt --verbose backup "$HOME/Documents"

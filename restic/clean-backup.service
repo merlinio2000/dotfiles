@@ -1,0 +1,12 @@
+[Unit]
+Description=Automated backups pruning
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/dotfiles/restic
+ExecStart=/bin/sh ./forget.sh
+NoNewPrivileges=true
+CPUSchedulingPolicy=idle
+IOSchedulingClass=idle
+ProtectSystem=strict
+PrivateTmp=true

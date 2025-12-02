@@ -2,7 +2,7 @@
 Description=Automated backups daily (persistent)
 
 [Timer]
-Calendar=daily
+OnCalendar=daily
 # make sure "forgotten" runs because of shutdown are executed on boot
 Persistent=true
 

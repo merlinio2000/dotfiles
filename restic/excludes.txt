@@ -10,3 +10,7 @@
 **/.next/
 **/venv/
 **/.venv/
+
+# from benchmarking
+**/perf.data*
+

@@ -131,6 +131,12 @@ chars = "\u001Bq"
 key = "Q"
 mods = "Alt"
 
+[[keyboard.bindings]]
+chars = "\x1f"
+key = "Slash"
+mods = "Control"
+
+
 [selection]
 save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
